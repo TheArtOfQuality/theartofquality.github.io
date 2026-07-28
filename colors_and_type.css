@@ -1,0 +1,227 @@
+/* ============================================================
+   The Art of Quality — Colors & Type
+   A monochrome, literary system. Cormorant for display,
+   Inter for everything else. No accent colors.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* ---------- Color tokens ---------- */
+  /* Core monochrome palette — black & white with a warm-grey scale */
+  --aoq-ink:        #0A0A0A;   /* near-black for primary text */
+  --aoq-ink-soft:   #1C1C1C;   /* surfaces (nav bar overlay base) */
+  --aoq-graphite:   #2E2E2E;   /* body on light bg, hover dark */
+  --aoq-stone:      #5C5C5C;   /* secondary text, meta */
+  --aoq-ash:        #8A8A8A;   /* tertiary text, dividers strong */
+  --aoq-bone:       #C7C4BD;   /* hairline borders on cream */
+  --aoq-cream:      #EDE9E2;   /* alt background, paper feel */
+  --aoq-paper:      #F6F4EF;   /* primary off-white background */
+  --aoq-white:      #FFFFFF;   /* pure white */
+
+  /* Translucent overlays for the sticky nav */
+  --aoq-nav-bg:     rgba(10, 10, 10, 0.80);   /* spec'd 80% black */
+  --aoq-nav-border: rgba(255, 255, 255, 0.08);
+
+  /* Semantic surfaces */
+  --aoq-bg:         var(--aoq-paper);
+  --aoq-bg-alt:     var(--aoq-cream);
+  --aoq-bg-dark:    var(--aoq-ink);
+  --aoq-fg:         var(--aoq-ink);
+  --aoq-fg-muted:   var(--aoq-stone);
+  --aoq-fg-faint:   var(--aoq-ash);
+  --aoq-fg-invert:  var(--aoq-paper);
+  --aoq-rule:       var(--aoq-bone);
+  --aoq-rule-strong:var(--aoq-graphite);
+
+  /* ---------- Type tokens ---------- */
+  --aoq-serif: "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+  --aoq-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  /* Tracking presets — Inter is the eyebrow workhorse */
+  --aoq-track-eyebrow: 0.22em;   /* tiny all-caps labels */
+  --aoq-track-nav:     0.14em;   /* nav, buttons */
+  --aoq-track-tight:   -0.01em;  /* display serif */
+
+  /* Sizes (clamped for fluid layouts) */
+  --aoq-fs-display: clamp(48px, 7vw, 96px);
+  --aoq-fs-h1:      clamp(36px, 5vw, 64px);
+  --aoq-fs-h2:      clamp(28px, 3.4vw, 44px);
+  --aoq-fs-h3:      clamp(22px, 2.2vw, 28px);
+  --aoq-fs-lead:    clamp(18px, 1.5vw, 22px);
+  --aoq-fs-body:    16px;
+  --aoq-fs-small:   14px;
+  --aoq-fs-micro:   12px;
+
+  /* Line heights */
+  --aoq-lh-display: 1.04;
+  --aoq-lh-heading: 1.14;
+  --aoq-lh-body:    1.6;
+
+  /* ---------- Spacing & radius ---------- */
+  --aoq-space-1: 4px;
+  --aoq-space-2: 8px;
+  --aoq-space-3: 12px;
+  --aoq-space-4: 16px;
+  --aoq-space-5: 24px;
+  --aoq-space-6: 32px;
+  --aoq-space-7: 48px;
+  --aoq-space-8: 64px;
+  --aoq-space-9: 96px;
+  --aoq-space-10:128px;
+
+  --aoq-radius-0: 0px;     /* default: no radius. monochrome / editorial. */
+  --aoq-radius-1: 2px;     /* inputs, tiny chips */
+  --aoq-radius-full: 9999px;
+
+  --aoq-nav-h: 72px;       /* sticky nav height */
+  --aoq-content-max: 1240px;
+  --aoq-prose-max: 720px;
+
+  --aoq-shadow-soft: 0 1px 2px rgba(10,10,10,0.04), 0 8px 24px rgba(10,10,10,0.06);
+  --aoq-shadow-lift: 0 2px 6px rgba(10,10,10,0.06), 0 20px 50px rgba(10,10,10,0.10);
+
+  --aoq-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --aoq-dur-fast: 160ms;
+  --aoq-dur-base: 260ms;
+  --aoq-dur-slow: 480ms;
+}
+
+/* ============================================================
+   Semantic class layer
+   ============================================================ */
+
+html, body {
+  background: var(--aoq-bg);
+  color: var(--aoq-fg);
+  font-family: var(--aoq-sans);
+  font-size: var(--aoq-fs-body);
+  line-height: var(--aoq-lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.aoq-display {
+  font-family: var(--aoq-serif);
+  font-weight: 400;
+  font-size: var(--aoq-fs-display);
+  line-height: var(--aoq-lh-display);
+  letter-spacing: var(--aoq-track-tight);
+  color: var(--aoq-fg);
+  text-wrap: pretty;
+}
+.aoq-h1 {
+  font-family: var(--aoq-serif);
+  font-weight: 400;
+  font-size: var(--aoq-fs-h1);
+  line-height: var(--aoq-lh-heading);
+  letter-spacing: var(--aoq-track-tight);
+}
+.aoq-h2 {
+  font-family: var(--aoq-serif);
+  font-weight: 400;
+  font-size: var(--aoq-fs-h2);
+  line-height: var(--aoq-lh-heading);
+}
+.aoq-h3 {
+  font-family: var(--aoq-serif);
+  font-weight: 500;
+  font-size: var(--aoq-fs-h3);
+  line-height: 1.25;
+}
+.aoq-italic-serif {
+  font-family: var(--aoq-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.aoq-eyebrow {
+  font-family: var(--aoq-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--aoq-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--aoq-fg-muted);
+}
+
+.aoq-nav-link {
+  font-family: var(--aoq-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: var(--aoq-track-nav);
+  text-transform: uppercase;
+  color: var(--aoq-fg-invert);
+  text-decoration: none;
+  opacity: 0.78;
+  transition: opacity var(--aoq-dur-fast) var(--aoq-ease);
+}
+.aoq-nav-link:hover { opacity: 1; }
+
+.aoq-lead {
+  font-family: var(--aoq-sans);
+  font-size: var(--aoq-fs-lead);
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--aoq-fg-muted);
+}
+
+.aoq-body  { font-family: var(--aoq-sans); font-size: var(--aoq-fs-body); line-height: var(--aoq-lh-body); }
+.aoq-small { font-family: var(--aoq-sans); font-size: var(--aoq-fs-small); color: var(--aoq-fg-muted); }
+.aoq-micro { font-family: var(--aoq-sans); font-size: var(--aoq-fs-micro); letter-spacing: 0.08em; text-transform: uppercase; color: var(--aoq-fg-faint); }
+
+.aoq-quote {
+  font-family: var(--aoq-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.35;
+  color: var(--aoq-fg);
+}
+.aoq-quote-attrib {
+  font-family: var(--aoq-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: var(--aoq-track-nav);
+  text-transform: uppercase;
+  color: var(--aoq-fg-muted);
+}
+
+/* Buttons */
+.aoq-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  font-family: var(--aoq-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: var(--aoq-track-nav);
+  text-transform: uppercase;
+  border: 1px solid var(--aoq-ink);
+  background: var(--aoq-ink);
+  color: var(--aoq-paper);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--aoq-dur-base) var(--aoq-ease),
+              color var(--aoq-dur-base) var(--aoq-ease),
+              transform var(--aoq-dur-fast) var(--aoq-ease);
+}
+.aoq-btn:hover { background: transparent; color: var(--aoq-ink); }
+.aoq-btn:active { transform: translateY(1px); }
+
+.aoq-btn--ghost {
+  background: transparent;
+  color: var(--aoq-ink);
+}
+.aoq-btn--ghost:hover { background: var(--aoq-ink); color: var(--aoq-paper); }
+
+.aoq-btn--invert {
+  background: var(--aoq-paper);
+  border-color: var(--aoq-paper);
+  color: var(--aoq-ink);
+}
+.aoq-btn--invert:hover { background: transparent; color: var(--aoq-paper); }
+
+/* Hairlines */
+.aoq-rule { border: 0; border-top: 1px solid var(--aoq-rule); }
+.aoq-rule-strong { border: 0; border-top: 1px solid var(--aoq-rule-strong); }
