@@ -924,6 +924,15 @@ section > .show-intro:first-child + .ep-section-head { margin-top: 24px; }
   background: var(--aoq-stone, #6a655d);
 }
 .ep-modal__prose strong { font-weight: 600; }
+.ep-modal__prose a,
+.show-intro__col p a {
+  color: var(--aoq-ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 160ms var(--aoq-ease);
+}
+.ep-modal__prose a:hover,
+.show-intro__col p a:hover { color: var(--aoq-stone); }
 
 .ep-modal__links { list-style: none; margin: 0; padding: 0; }
 .ep-modal__link-row {
