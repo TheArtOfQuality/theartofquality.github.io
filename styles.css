@@ -361,7 +361,7 @@ img { display: block; max-width: 100%; }
 
 /* === Footer === */
 .footer { background: var(--aoq-ink); color: rgba(246,244,239,0.7); padding: 64px 0 40px; border-top: 1px solid rgba(246,244,239,0.08); }
-.footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; align-items: flex-start; }
+.footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; align-items: flex-start; }
 .footer__brand { display: flex; align-items: center; gap: 14px; }
 .footer__logo { width: 44px; height: 44px; }
 .footer__wm { font-family: var(--aoq-serif); font-size: 22px; color: var(--aoq-paper); }
