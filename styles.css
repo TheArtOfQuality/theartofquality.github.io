@@ -1218,7 +1218,15 @@ html[data-pace="stately"] .s-head__title { font-size: clamp(36px, 4.2vw, 56px); 
    gradient. Until the real export lands at that path, the gradient shows
    through cleanly instead of a broken-image icon. */
 .tone-img { position: relative; width: 100%; height: 100%; }
-.tone-img img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; filter: grayscale(1) contrast(1.05); }
+.tone-img img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; }
+
+/* Grayscale-by-default applies to real photos only (episode covers/cards,
+   host portraits) — never to show cover artwork, which is pre-designed
+   graphics with their own baked-in color, logo, and text. */
+.ep-card__img .tone-img img,
+.episode-cover .tone-img img {
+  filter: grayscale(1) contrast(1.05);
+}
 .tone-img::before {
   content: ""; position: absolute; inset: 0;
 }
