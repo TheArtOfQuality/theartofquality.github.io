@@ -971,6 +971,14 @@ section > .show-intro:first-child + .ep-section-head { margin-top: 24px; }
   transition: transform 220ms var(--aoq-ease);
 }
 .ep-modal__link-text:hover .ep-modal__link-arrow { transform: translate(2px, -2px); }
+.ep-modal__link-desc {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  font-family: var(--aoq-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--aoq-graphite);
+}
 
 .ep-modal__related {
   display: grid;
