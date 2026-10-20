@@ -409,10 +409,6 @@ img { display: block; max-width: 100%; }
 /* Reveal-on-hover (used on the Episodes page show sections). */
 .ep-card__show-overlay--persistent { opacity: 0; }
 .ep-card:hover .ep-card__show-overlay--persistent { opacity: 0.82; }
-/* General (no-show) cards — plain white wash that fades in on hover at the
-   same transparency as the colored show overlays above. */
-.ep-card__show-overlay--white { background: #FFFFFF; }
-.ep-card:hover .ep-card__show-overlay--white { opacity: 0.72; }
 .ep-card__show-overlay-eyebrow {
   font-family: var(--aoq-serif);
   font-style: italic;
