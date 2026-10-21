@@ -275,6 +275,7 @@ img { display: block; max-width: 100%; }
 /* === Show cards === */
 .shows { display: flex; flex-direction: column; }
 .show-row { display: grid; grid-template-columns: 220px 1fr auto; gap: 40px; align-items: center; padding: 36px 0; border-top: 1px solid var(--aoq-rule); cursor: pointer; text-decoration: none; color: inherit; transition: padding-left 320ms var(--aoq-ease); }
+.shows .show-row:first-child { border-top: 0; padding-top: 0; }
 .show-row:last-child { border-bottom: 1px solid var(--aoq-rule); }
 .show-row:hover { padding-left: 12px; }
 .show-row__num { font-family: var(--aoq-sans); font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--aoq-stone); }
