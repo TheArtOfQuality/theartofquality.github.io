@@ -1254,8 +1254,3 @@ html[data-pace="stately"] .s-head__title { font-size: clamp(36px, 4.2vw, 56px); 
 }
 .episode-back:hover { color: var(--aoq-ink); }
 @media (max-width: 720px) { .episode-cover { aspect-ratio: 4/3; } }
-
-/* Clean 16:9 portrait banner (Thorson episode): no grayscale, no tint, no text over the faces.
-   Height is capped to the viewport; the side space matches the image's flat navy (#113257). */
-.episode-cover--banner { aspect-ratio: auto; height: min(56.25vw, 75vh); background: #113257; }
-.episode-cover--banner .tone-img img { filter: none; object-fit: contain; }
