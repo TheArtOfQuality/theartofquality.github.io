@@ -1254,3 +1254,88 @@ html[data-pace="stately"] .s-head__title { font-size: clamp(36px, 4.2vw, 56px); 
 }
 .episode-back:hover { color: var(--aoq-ink); }
 @media (max-width: 720px) { .episode-cover { aspect-ratio: 4/3; } }
+
+
+/* ============================================================
+   LISTEN BUTTONS  (homepage hero, episode pages, /listen/)
+   Outlined, thin border, icon + label. Colour follows the surrounding text.
+   ============================================================ */
+.listen-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.listen-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--aoq-sans); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; line-height: 1;
+  padding: 14px 22px;
+  color: var(--aoq-ink); text-decoration: none; cursor: pointer;
+  border: 1px solid var(--aoq-ink); background: transparent;
+  transition: background 200ms var(--aoq-ease), color 200ms var(--aoq-ease), border-color 200ms var(--aoq-ease);
+}
+.listen-btn:hover, .listen-btn:focus-visible { background: var(--aoq-ink); color: var(--aoq-paper); }
+.listen-btn[hidden] { display: none; }
+.listen-btn svg { width: 16px; height: 16px; flex: none; }
+.listen-link {
+  font-family: var(--aoq-sans); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; line-height: 1;
+  color: var(--aoq-ink); text-decoration: none;
+  padding: 0 2px 4px; border-bottom: 1px solid var(--aoq-ink);
+  transition: opacity 200ms var(--aoq-ease);
+}
+.listen-link:hover { opacity: 0.6; }
+.listen-row--on-dark .listen-btn { color: var(--aoq-paper); border-color: rgba(246, 244, 239, 0.55); }
+.listen-row--on-dark .listen-btn:hover, .listen-row--on-dark .listen-btn:focus-visible { background: var(--aoq-paper); color: var(--aoq-ink); border-color: var(--aoq-paper); }
+.listen-row--on-dark .listen-link { color: var(--aoq-paper); border-bottom-color: rgba(246, 244, 239, 0.55); }
+.hero__listen { justify-content: center; margin-top: 36px; gap: 14px 16px; }
+.hero__listen .listen-link { margin-left: 8px; }
+.ep-listen { margin: 4px 0 24px; }
+
+/* === Episode tiles (/podcasts/ all-episodes grid) === */
+.ep-tile { display: flex; flex-direction: column; gap: 12px; }
+.ep-tile[hidden] { display: none; }
+.ep-tile__listen { display: flex; align-items: center; gap: 8px; }
+.ep-tile__icon {
+  width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
+  color: var(--aoq-ink); border: 1px solid var(--aoq-bone); border-radius: 50%; text-decoration: none;
+  transition: background 200ms var(--aoq-ease), color 200ms var(--aoq-ease), border-color 200ms var(--aoq-ease);
+}
+.ep-tile__icon:hover, .ep-tile__icon:focus-visible { background: var(--aoq-ink); color: var(--aoq-paper); border-color: var(--aoq-ink); }
+.ep-tile__icon svg { width: 15px; height: 15px; }
+.ep-listing-bar { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin: 0 0 32px; }
+.ep-listing-bar__count { font-family: var(--aoq-sans); font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--aoq-stone); }
+.ep-listing-bar__note { font-family: var(--aoq-sans); font-size: 13px; color: var(--aoq-stone); }
+.ep-listing-bar__note a { color: var(--aoq-ink); text-decoration: none; border-bottom: 1px solid var(--aoq-ink); padding-bottom: 1px; }
+.ep-listing-bar__note a:hover { opacity: 0.6; }
+
+/* === About + Listen pages === */
+.about-section { display: grid; grid-template-columns: 220px 1fr; gap: 48px; padding: 56px 0; border-top: 1px solid var(--aoq-rule); }
+.about-section:first-of-type { border-top: 0; padding-top: 24px; }
+.about-section__label { font-family: var(--aoq-sans); font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--aoq-stone); padding-top: 8px; }
+.about-section__body { max-width: 680px; font-family: var(--aoq-serif); font-size: 22px; line-height: 1.5; }
+.about-section__body p { margin: 0 0 20px; }
+.about-section__body .about-link { font-family: var(--aoq-sans); font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aoq-ink); text-decoration: none; border-bottom: 1px solid var(--aoq-ink); padding-bottom: 4px; }
+.about-section__body .about-link:hover { opacity: 0.6; }
+.placeholder { margin: 0 0 20px; padding: 16px 20px; border: 1px dashed var(--aoq-bone); font-family: var(--aoq-sans); font-size: 14px; line-height: 1.5; color: var(--aoq-stone); }
+.about-hosts { list-style: none; margin: 0 0 28px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
+.about-hosts a { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 18px 0; border-top: 1px solid var(--aoq-rule); text-decoration: none; color: inherit; transition: padding-left 220ms var(--aoq-ease); }
+.about-hosts a:hover { padding-left: 8px; }
+.about-hosts__role { font-family: var(--aoq-sans); font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aoq-stone); }
+.listen-list { display: flex; flex-direction: column; gap: 14px; max-width: 520px; padding-bottom: 96px; }
+.listen-list .listen-btn { justify-content: space-between; padding: 22px 24px; font-size: 12px; }
+.listen-list .listen-btn span.listen-btn__main { display: inline-flex; align-items: center; gap: 12px; }
+.listen-list .listen-btn svg { width: 18px; height: 18px; }
+
+@media (max-width: 900px) {
+  .about-section { grid-template-columns: 1fr; gap: 16px; padding: 40px 0; }
+  .about-section__body { font-size: 20px; }
+}
+@media (max-width: 600px) {
+  .about-hosts { grid-template-columns: 1fr; }
+  .hero__listen { flex-direction: column; align-items: stretch; max-width: 320px; margin-left: auto; margin-right: auto; }
+  .hero__listen .listen-btn { justify-content: center; }
+  .hero__listen .listen-link { margin: 6px auto 0; align-self: center; }
+  /* four nav items (Episodes, About, Team, Join) need a tighter row on phones */
+  .nav { padding: 0 14px; }
+  .nav__logo { width: 38px; height: 38px; }
+  .nav__brand { margin-right: 10px; }
+  .nav__links { gap: 10px; }
+  .nav__link { font-size: 10.5px; letter-spacing: 0.06em; }
+}
