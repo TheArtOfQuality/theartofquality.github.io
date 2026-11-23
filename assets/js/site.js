@@ -18,6 +18,13 @@
     }
   });
 
+  // Follow buttons: social links from site-config.js
+  var social = (window.AOQ_CONFIG && window.AOQ_CONFIG.social) || {};
+  Array.prototype.forEach.call(document.querySelectorAll('[data-social]'), function (a) {
+    var url = social[a.getAttribute('data-social')];
+    if (isUrl(url)) a.setAttribute('href', url);
+  });
+
   // 2. All-episodes grid: newest first, optional filter by host
   var grid = document.querySelector('[data-ep-grid]');
   if (!grid) return;
