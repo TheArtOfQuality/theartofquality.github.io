@@ -1313,7 +1313,6 @@ html[data-pace="stately"] .s-head__title { font-size: clamp(36px, 4.2vw, 56px); 
 .about-section__body p { margin: 0 0 20px; }
 .about-section__body .about-link { font-family: var(--aoq-sans); font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aoq-ink); text-decoration: none; border-bottom: 1px solid var(--aoq-ink); padding-bottom: 4px; }
 .about-section__body .about-link:hover { opacity: 0.6; }
-.placeholder { margin: 0 0 20px; padding: 16px 20px; border: 1px dashed var(--aoq-bone); font-family: var(--aoq-sans); font-size: 14px; line-height: 1.5; color: var(--aoq-stone); }
 .about-hosts { list-style: none; margin: 0 0 28px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
 .about-hosts a { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 18px 0; border-top: 1px solid var(--aoq-rule); text-decoration: none; color: inherit; transition: padding-left 220ms var(--aoq-ease); }
 .about-hosts a:hover { padding-left: 8px; }
