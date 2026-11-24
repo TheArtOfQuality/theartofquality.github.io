@@ -1229,8 +1229,7 @@ html[data-pace="stately"] .s-head__title { font-size: clamp(36px, 4.2vw, 56px); 
 /* Grayscale-by-default applies to real photos only (episode covers/cards,
    host portraits) — never to show cover artwork, which is pre-designed
    graphics with their own baked-in color, logo, and text. */
-.ep-card__img .tone-img img,
-.episode-cover .tone-img img {
+.ep-card__img .tone-img img {
   filter: grayscale(1) contrast(1.05);
 }
 .tone-img::before {
@@ -1241,19 +1240,15 @@ html[data-pace="stately"] .s-head__title { font-size: clamp(36px, 4.2vw, 56px); 
 .tone-img--sepia::before { background: linear-gradient(135deg, #5c5042 0%, #221c15 100%); }
 .tone-img--gray::before  { background: linear-gradient(135deg, #524a40 0%, #1d1a16 100%); }
 
-/* === Standalone episode page (full page, not a modal) === */
-.episode-cover { position: relative; width: 100%; aspect-ratio: 21/9; background: var(--aoq-ink); overflow: hidden; margin-bottom: 56px; }
-.episode-cover .tone-img { position: absolute; inset: 0; }
-.episode-cover__tint { position: absolute; inset: 0; opacity: 0.74; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
-.episode-body { max-width: var(--aoq-prose-max); margin: 0 auto; padding: 0 32px 128px; }
+/* === Standalone episode page (full page, not a modal): header, then player directly === */
+.episode-body { max-width: var(--aoq-prose-max); margin: 0 auto; padding: 8px 32px 128px; }
 .episode-back {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--aoq-sans); font-size: 11px; font-weight: 500;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--aoq-stone); text-decoration: none; margin-bottom: 40px;
+  color: var(--aoq-stone); text-decoration: none; margin: 40px 0;
 }
 .episode-back:hover { color: var(--aoq-ink); }
-@media (max-width: 720px) { .episode-cover { aspect-ratio: 4/3; } }
 
 
 /* ============================================================
